@@ -59,6 +59,7 @@ double metnum_uts::evaluateDerivative(const QString& functionString, double x) {
 void metnum_uts::on_pushButton_clicked()
 {
     ui->plainTextEdit->clear();
+    QString MaxIter = ui->MaxIter->text();
 
     QString selectedmetode = ui->comboBox->currentText();
     QString functionString = ui->Function->text();
@@ -101,7 +102,12 @@ void metnum_uts::on_pushButton_clicked()
 
         double c = a;
         int iteration = 0;
-        const int MAX_ITERATIONS = 1000;
+        const int MAX_ITERATIONS = MaxIter.toInt(&ok);
+
+        if (!ok) {
+            ui->plainTextEdit->appendPlainText("Max Iterations value is invalid");
+            return;
+        }
 
         while (iteration < MAX_ITERATIONS) {
             c = (a * fb - b * fa) / (fb - fa);
@@ -125,7 +131,7 @@ void metnum_uts::on_pushButton_clicked()
         }
 
         if (iteration == MAX_ITERATIONS) {
-            ui->plainTextEdit->appendPlainText("Max iteration");
+            ui->plainTextEdit->appendPlainText("Max iteration limit sudah tercapai");
         } else {
             ui->plainTextEdit->appendPlainText(QString("Root found at: %1").arg(c, 0, 'f', 6));
         }
@@ -146,7 +152,12 @@ void metnum_uts::on_pushButton_clicked()
 
         double x = x0;
         int iteration = 0;
-        const int MAX_ITERATIONS = 1000;
+        const int MAX_ITERATIONS = MaxIter.toInt(&ok);
+
+        if (!ok) {
+            ui->plainTextEdit->appendPlainText("Max Iterations value is invalid");
+            return;
+        }
 
         while (iteration < MAX_ITERATIONS) {
             double fx = evaluateFunction(functionString, x);
@@ -177,8 +188,8 @@ void metnum_uts::on_pushButton_clicked()
             iteration++;
         }
 
-        if (iteration >= MAX_ITERATIONS) {
-            ui->plainTextEdit->appendPlainText("Maximum iterations reached");
+        if (iteration == MAX_ITERATIONS) {
+            ui->plainTextEdit->appendPlainText("Max iteration limit sudah tercapai");
         }
     }
 }

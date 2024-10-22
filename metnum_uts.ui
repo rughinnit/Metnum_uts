@@ -15,7 +15,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0" colspan="5">
+    <item row="0" column="0" colspan="6">
      <widget class="QComboBox" name="comboBox"/>
     </item>
     <item row="1" column="0">
@@ -56,22 +56,29 @@
      </widget>
     </item>
     <item row="1" column="4">
+     <widget class="QLineEdit" name="MaxIter">
+      <property name="placeholderText">
+       <string>Maximum Iteration (Hati - hati CPU Anda)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="5">
      <widget class="QLineEdit" name="Error">
       <property name="text">
-       <string>0.0001</string>
+       <string>0.00001</string>
       </property>
       <property name="placeholderText">
        <string>Insert Error</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="0" colspan="5">
+    <item row="2" column="0" colspan="6">
      <widget class="QPlainTextEdit" name="plainTextEdit"/>
     </item>
-    <item row="3" column="0" colspan="5">
+    <item row="3" column="0" colspan="6">
      <widget class="QLabel" name="label">
       <property name="text">
-       <string>Tips: Tidak bisa menggunakan pangkat (^) semua harus memakai perkalian (*). Untuk menggunakan Sin, Cos, Tan, dan kawan-kawannya bisa menggunakan sin(). Maximum Iterasi adalah 1000. Untuk Metode Newton Raphson, gunakan A untuk initial guess.</string>
+       <string>Tips: Tidak bisa menggunakan pangkat (^) semua harus memakai perkalian (*). Untuk menggunakan Sin, Cos, Tan, dan kawan-kawannya bisa menggunakan sin(). Untuk Metode Newton Raphson, gunakan A untuk initial guess. Normal Maximum Iteration=1000</string>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
