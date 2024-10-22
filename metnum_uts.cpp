@@ -138,7 +138,7 @@ void metnum_uts::on_pushButton_clicked()
             return;
         }
 
-        double x0 = initAString.toDouble(&ok);  // We'll use initA as initial guess
+        double x0 = initAString.toDouble(&ok);
         if (!ok) {
             ui->plainTextEdit->appendPlainText("Initial guess salah");
             return;
@@ -152,7 +152,7 @@ void metnum_uts::on_pushButton_clicked()
             double fx = evaluateFunction(functionString, x);
             double dfx = evaluateDerivative(functionString, x);
 
-            if (std::fabs(dfx) < 1e-10) {
+            if (fabs(dfx) < 1e-10) {
                 ui->plainTextEdit->appendPlainText("Derivative too close to zero");
                 return;
             }
@@ -166,7 +166,7 @@ void metnum_uts::on_pushButton_clicked()
                     .arg(fx, 0, 'f', 6)
                 );
 
-            if (std::fabs(x_new - x) < errorTolerance) {
+            if (fabs(x_new - x) < errorTolerance) {
                 ui->plainTextEdit->appendPlainText(
                     QString("Root found at: %1").arg(x_new, 0, 'f', 6)
                     );
