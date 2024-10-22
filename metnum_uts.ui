@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>metnum_uts</class>
+ <widget class="QMainWindow" name="metnum_uts">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>716</width>
+    <height>433</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>metnum_uts</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" colspan="5">
+     <widget class="QComboBox" name="comboBox"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Calculate</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="Function">
+      <property name="text">
+       <string>x*x-4*x+1</string>
+      </property>
+      <property name="placeholderText">
+       <string>Insert Function</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLineEdit" name="InitA">
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="placeholderText">
+       <string>Insert Init A</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QLineEdit" name="InitB">
+      <property name="text">
+       <string>1</string>
+      </property>
+      <property name="placeholderText">
+       <string>Insert Init B</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4">
+     <widget class="QLineEdit" name="Error">
+      <property name="text">
+       <string>0.0001</string>
+      </property>
+      <property name="placeholderText">
+       <string>Insert Error</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="5">
+     <widget class="QPlainTextEdit" name="plainTextEdit"/>
+    </item>
+    <item row="3" column="0" colspan="5">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Tips: Tidak bisa menggunakan pangkat (^) semua harus memakai perkalian (*). Untuk menggunakan Sin, Cos, Tan, dan kawan-kawannya bisa menggunakan sin(). Maximum Iterasi adalah 1000. Untuk Metode Newton Raphson, gunakan A untuk initial guess dan kosongkan B</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
